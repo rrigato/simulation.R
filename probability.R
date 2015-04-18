@@ -1,17 +1,32 @@
 #simulation of pulling two balls from an urn without replacement
 #problem1
-
-m = 100000
-x = numeric(m)
+#two dice without replacement
+set.seed(1); m = 100000; summed = numeric(m);
 for (i in 1:m)
 {
-x[i] = sum(sample(1:6,2))
+	summed[i] = sum(sample(1:6,2, repl=FALSE))
 }
-cuts = c(2:12)
-hist(x, breaks =cuts, prob=TRUE)
+probability = (summary(as.factor(sumed)))/m; probability
+less_than7_even = probability[1] + probability[3] + probability[5]; less_than7_even;
+cuts = c(1.5:12.5)
+hist(sumed, breaks =cuts, prob=TRUE)
 
-prob_even_less_than_seven =
- 
+
+
+
+#two dice with replacement
+set.seed(1);
+m = 100000
+dice1 = sample(1:6,m,repl=TRUE)
+dice2 = sample(1:6,m, repl = TRUE)
+summed = dice1+dice2
+probability = (summary(as.factor(summed)))/m; probability
+less_than7_even = probability[1] + probability[3] + probability[5]; less_than7_even;
+cuts = c(1.5:12.5)
+hist(sumed, breaks =cuts, prob=TRUE)
+
+
+
   
   
 #simulation of three independent uniform distributions in a 100000 row matrix
@@ -53,4 +68,3 @@ for (n in i:a)
 }
 cuts3 = c(0:25)
 hist (c, breaks =cuts3, prob=TRUE)
-
