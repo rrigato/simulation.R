@@ -37,8 +37,8 @@ y = matrix(z, nrow = z, ncol=3, byrow=TRUE)
 uni_median = numeric(z)
 
 #needed to first install and load matrixStats package
-#install.packages("matrix.Stats") 
-#library(matrixStats)
+install.packages("matrix.Stats") 
+library(matrixStats)
 for (i in 1:z)
 {
   y[i,1] = runif(1,0,1)
@@ -53,18 +53,39 @@ tail(uni_median, 10)
 
 
 #problem 3
-a = 100000
-d = 40
-b = numeric(40)
-c = numeric(a)
-for (n in i:a)
+
+set.seed(1); a = 100000; class = 40; b = numeric(class); c = numeric(a);
+for (i in 1:a)
 {
-  for (k in 1:40)
-  {
-    b[i] = sample(1:20, 1, repl = TRUE)
-  }
-  
-  c[i] = length(unique(b[i]))
+  b = sample(1:20,class, repl = TRUE);
+  c[i] = length(unique(b))
 }
-cuts3 = c(0:25)
+probabilities = (summary(as.factor(c))) / a; probabilities;
+cuts3 = c(0.5:20.5)
 hist (c, breaks =cuts3, prob=TRUE)
+mean(c); sd(c);
+
+
+
+#problem 4
+#for a uniform distribution
+set.seed(1); m = 100000; number_of_ties = numeric(m);
+for (i in 1:m)
+{
+	number_of_ties[i] =  25 - length(unique(floor((runif(25,0,1)*100))))
+}
+probability = (summary(as.factor(number_of_ties)))/m; probability
+
+mean(number_of_ties)
+
+
+# for a normal(0,1) distribution
+set.seed(1); m = 100000; number_of_ties = numeric(m);
+for (i in 1:m)
+{
+	number_of_ties[i] =  25 - length(unique(floor((rnorm(25,mean=0,sd=1)*100))))
+}
+probability = (summary(as.factor(number_of_ties)))/m; probability
+
+mean(number_of_ties)
+
