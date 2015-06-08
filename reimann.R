@@ -3,3 +3,20 @@ set.seed(2842);
 integrand = function(x){dexp(x, rate=3)}
 integrate(integrand, 0, Inf) 
 #c = 1 because 1/1= 1
+#makes sense because all of the probability for an exponential is above 0
+
+
+#e[x]
+#simple monte carlo
+m = 10^7; a = 0; b = 20
+w = (b - a)/m # average distance btw random pts
+u = runif(m, a, b) # random points
+h = u * dexp(u,rate=3) # heights above random points
+sum(w*h) 
+
+#reiman to approximate e[x]
+m = 100000; a = 0; b = 20 # Try 20 (and more grid pts) to check
+w = (b - a)/m # width (base) of rectangles
+g = seq(a+w/2, b, by=w) # grid of m centers
+h = g * dexp(g,rate=3) # heights of rectangles
+sum(w*h) 
