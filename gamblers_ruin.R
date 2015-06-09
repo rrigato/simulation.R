@@ -1,6 +1,6 @@
 #gamblers ruin
 set.seed(2842);
-   P = 	     matrix(c( 1, 0, 0, 0, 0, 0,
+ P = 	  	       matrix(c( 1, 0, 0, 0, 0, 0,
  				   .46, 0, .46, 0, 0, 0,
  				   0, .46, 0, .46, 0, 0,
 				   0, 0, .46, 0, .46, 0,
@@ -25,13 +25,14 @@ rowSums(M) #mean Time until absorbtion
 
 
 #simulation of results
-m = 100000; t = a = numeric(m)
+set.seed(2842); m = 100000; t = a = numeric(m)
+weights = c(.54,.46)
 for (i in 1:m)
 {
- x = cs = 1.5
-while ((cs > 0) & (cs < 3))
+ x = cs = 3
+while ((cs > 0) & (cs < 5))
  {
- cs = sample(c(-1,1), 1) + cs
+ cs = sample(c(-1,1), 1, prob=weights) + cs
  x = c(x, cs)
  }
  t[i] = length(x) - 1
