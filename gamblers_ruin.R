@@ -22,3 +22,19 @@ Q = P[2:5, 2:5]; N = P[2:5, c(1, 6)]
 I = matrix(0, ncol=4, nrow=4); for (k in 1:4){I[k, k]=1}
 M = solve(I-Q); M 
 rowSums(M) #mean Time until absorbtion
+
+
+#simulation of results
+m = 100000; t = a = numeric(m)
+for (i in 1:m)
+{
+ x = cs = 1.5
+while ((cs > 0) & (cs < 3))
+ {
+ cs = sample(c(-1,1), 1) + cs
+ x = c(x, cs)
+ }
+ t[i] = length(x) - 1
+ a[i] = cs
+}
+mean(t); mean(t <= 8); 
