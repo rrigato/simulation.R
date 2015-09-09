@@ -19,4 +19,8 @@ Min_Wage
 install.packages("sqldf");
 library(sqldf);
 
-temp <- sqldf("SELECT * from scores s inner join SELECT *  Min_Wage on scores = Min_Wage.Year");
+temp <- sqldf("SELECT m.*, s.name2 from 
+			scores s inner join 
+			Min_Wage m 
+			on s.name = m.Year");
+temp
