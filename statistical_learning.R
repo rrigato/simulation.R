@@ -137,7 +137,15 @@ table(knn.pred4,test.Y) #4/15 when actual is .06
 
 
 
+library(ISLR)
+dim(Hitters)
+sum(is.na(Hitters))
+Hitters2 = na.omit(Hitters)
+dim(Hitters2)
+sum(is.na(Hitters2))
 
+install.packages("leaps")
+library(leaps)
 
 
 
