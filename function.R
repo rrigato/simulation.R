@@ -27,6 +27,8 @@ lm_model2 = lm(lstat~medv + medv:age)
 summary(lm_model2)
 
 LoadLibraries= function() {
+	install.packages("ggplot2")
+	install.packages("lubridate")
 	library(ggplot2);
 	library(lubridate);
 	print("The libraries have been loaded");
