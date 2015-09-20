@@ -37,6 +37,8 @@ LoadLibraries
 LoadLibraries()
 
 Regression = function( Y, X1, dataset){
+	library(ggplot2);
+	qplot(X1, Y);
 	temp = lm(Y~ X1 , data=dataset); print(temp);
 	print(summary(temp))
 	plot(temp$residuals, temp$predict)
