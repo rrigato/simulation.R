@@ -38,6 +38,7 @@ LoadLibraries()
 
 Regression = function( Y, X1, dataset){
 	library(ggplot2);
+	abline(Y~X1)
 	qplot(X1, Y);
 	temp = lm(Y~ X1 , data=dataset); print(temp);
 	print(summary(temp))
