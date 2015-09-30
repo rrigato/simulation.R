@@ -1,0 +1,16 @@
+# as a function of delta with n=50
+
+ d = 2:20
+ s = 49/sqrt(50)*sqrt(1-49/479)
+ plot(d, 2*pnorm(d/s)-1, type='l', xlab=expression(delta), ylab='', main='Error Probability')
+
+#as a function of n with delta=12,5, and 20
+
+plot(n, 2*pnorm(dp/(49/sqrt(n)*sqrt(1-(n-1)/479)))-1, type='l', xlab='n', ylab='', main='Error Probability')
+lines(n, 2*pnorm(5/(49/sqrt(n)*sqrt(1-(n-1)/479)))-1, col='blue', xlab='n', ylab='', main='Error Probability')
+lines(n, 2*pnorm(20/(49/sqrt(n)*sqrt(1-(n-1)/479)))-1, col='red', xlab='n', ylab='', main='Error Probability')
+
+# as a function of sigma, with n=50 and delta=12
+
+s =seq(1,100, length=1000)
+plot(s, 2*pnorm(12/(s/sqrt(50)*sqrt(1-(50-1)/479)))-1, type='l', xlab=expression(sigma), ylab='', main='Error Probability')
