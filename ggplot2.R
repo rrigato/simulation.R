@@ -14,6 +14,8 @@ q <- qplot(Height, aDOT, data = WR_data, size = weight, color = age,
 
 #can do geom = bar or geom = line for different plots
 #geom = c("point", "line")
+mode(q)
+which(WR_data >5)
 
 
 z <- qplot(Height, aDOT, data = WR_data, color = )
