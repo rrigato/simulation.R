@@ -14,6 +14,12 @@ P16 = P8 %*% P8; round(P16, 3)
 P32 = P16 %*% P16; round(P32, 3)#reaches steady state
 P64 = P32 %*% P32; round(P64, 3) 
 P128 = P64 %*% P64; round(P128, 3) 
+P256 = P128 %% P128; round(P256,3)
+P512 = P256 %% P256; round(P512,3)
+P1024 = P512 %% P512; round(P1024,3)
+P2048 = P1024 %% P1024; round (P2048, 3)
+P4096 = P2048 %%P2048; round(P4096, 3)
+P8192 = P4096 %%P4096; round(P8192,3)
 
 
 
