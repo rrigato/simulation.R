@@ -24,19 +24,28 @@ summary(sample_distribution)
 dim(sample_distribution)
 set.seed(2842)
 size = 1:43886
+n = 500
+N= 43886
 head(size)
 for (z in 1:5) #repeats sampling process 5 times
 {
-	random_num = sample(size,500) #gets random obs from 1 to 43886
-	random_obs = numeric(500); #initializes vector that will contain family values
+	random_num = sample(size,n) #gets random obs from 1 to 43886
+	random_obs = numeric(n); #initializes vector that will contain family values
 	#applies the observations that were randomly drawn
-	random_obs = families[random_num[1:500],];
+	random_obs = families[random_num[1:n],];
 
 	#part i
-#estimate of female headed families
-	p_hat = (sum(random_obs[1:500,1] == 3)/500); 
+	#estimate of female headed families
+	p_hat = (sum(random_obs[1:n,1] == 3)/n); 
 	
 	#estimate of the standard error
-	porp_se = sqrt(((p_hat-(1-p_hat
-	
+	porp_se = sqrt( ( (p_hat-(1-p_hat)/(n-1) ) * ((N-n)/N)) )
+	porp_se
 }
+
+
+
+
+
+
+
