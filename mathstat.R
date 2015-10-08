@@ -17,8 +17,26 @@ hist(sample_distribution)
 #problem 67 part a)
 families = read.csv(url("http://statistics.csueastbay.edu/~jkerr/STAT65012/families.txt"), header=T)
 families[1:10,]
+#43886
+library(ggplot2)
 
+summary(sample_distribution)
+dim(sample_distribution)
 set.seed(2842)
-for (z in 1:5)
+size = 1:43886
+head(size)
+for (z in 1:5) #repeats sampling process 5 times
 {
+	random_num = sample(size,500) #gets random obs from 1 to 43886
+	random_obs = numeric(500); #initializes vector that will contain family values
+	#applies the observations that were randomly drawn
+	random_obs = families[random_num[1:500],];
+
+	#part i
+#estimate of female headed families
+	p_hat = (sum(random_obs[1:500,1] == 3)/500); 
+	
+	#estimate of the standard error
+	porp_se = sqrt(((p_hat-(1-p_hat
+	
 }
