@@ -159,6 +159,7 @@ partIV
 numbers_chosen = numeric(400)
 B_results = numeric(400)
 sample_mean = numeric(100)
+sample_sd = numeric(100)
 for (B in 1:100)
 {
 	numbers_chosen = sample(size,400, replace=FALSE); numbers_chosen 
@@ -166,5 +167,57 @@ for (B in 1:100)
 	head(B_results)	
 		
 	sample_mean[B] = mean(B_results[1:400,4])	
+	sample_sd[B] = sd(B_results[1:400,4])
 }
 sample_mean
+sample_sd
+
+#part II
+hist(sample_mean)
+hist(sample_sd)
+
+
+#part III superimpose
+super1 = mean(sample_mean); super2 = sd(sample_sd); super1; super2
+hist(sample_mean, prob = TRUE)
+curve(dnorm(x, mean = super1, sd = super2 ),  col = "green", add=TRUE, lwd= 5)
+
+#part IV
+theory = ecdf(sample_mean)
+
+plot(theory, )
+
+
+#part V 
+#normal probability plot
+qqnorm(sample_mean)
+qqline(sample_mean)
+
+
+
+#part VI
+#95 %CI and how many contain population mu
+population_mu = mean(families[1:N,4]); population_mu
+
+counter = 0;
+for (t in 1:100)
+{
+	se = (sample_sd[t]/sqrt(400)) * ( (N-400)/N );
+	if ( (1.96*se + sample_mean[t])  >= population_mu
+		& (sample_mean[t] - 1.96*se) <= population_mu )
+	{
+		counter = counter +1;
+	}
+}
+#number of intervals that contain the population mean
+counter
+
+
+
+
+#part VI
+
+
+
+
+
