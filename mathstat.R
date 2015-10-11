@@ -238,13 +238,43 @@ hist(sample_sd2)
 
 
 
-
 #part C
+#Both = subset(families,families[,1] == 1)
+#Dad = subset(families,families[,1] == 2)
+#Mom = subset(families,families[,1] == 3)
+#nrow(Both) + nrow(Mom) + nrow(Dad)
+
+ran_num = sample(size,500, replace=FALSE)
+
+#book was unclear hear so I took one srs of 500 because it didn't say to take
+#an srs for each familiy type
+Both = subset(families[ran_num,], families[ran_num,1]==1)
+Dad = subset(families[ran_num,], families[ran_num,1]==2)
+Mom = subset(families[ran_num,], families[ran_num,1]==3)
+
+nrow(Both) + nrow(Dad) + nrow(Mom)
+par(mfrow=c(2,2))
+hist(Both[,4],breaks = 8 )
+hist(Dad[,4],breaks = 8)
+hist(Mom[,4],breaks = 8)
+
+par(mfrow=c(2,2))
+boxplot(Both[,4], main = 'BOTH')
+boxplot(Dad[,4], main = 'DAD')
+boxplot(Mom[,4], main = 'MOM')
+
+
+
+
+#part D
 #create datasets based on region 
 North = subset(families,families[,5] == 1)
 East = subset(families,families[,5] == 2)
 South = subset(families,families[,5] == 3)
 West = subset(families, families[,5]==4)
 
-#test to make
+#test to make number of obs matches number in problem set
+nrow(North)
+nrow(East)
 nrow(South)
+nrow(West)
