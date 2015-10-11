@@ -278,3 +278,22 @@ nrow(North)
 nrow(East)
 nrow(South)
 nrow(West)
+
+size
+Nsam = sample(1:nrow(North),400, replace=FALSE)
+Esam = sample(1:nrow(East),400, replace=FALSE)
+Ssam = sample(1:nrow(South),400, replace=FALSE)
+Wsam = sample(1:nrow(West),400, replace=FALSE)
+summary(Esam); summary(Wsam); summary(Ssam)
+
+
+par(mfrow=c(2,2))
+boxplot(North[Nsam,4], main = 'North Income')
+boxplot(South[Ssam,4], main = 'South Income')
+boxplot(East[Esam,4], main = 'East Income')
+boxplot(West[Wsam,4], main = 'West Income')
+
+
+
+#reset back to one window
+par(mfrow=c(1,1))
