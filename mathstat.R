@@ -12,8 +12,6 @@ hist(sample_distribution)
 
 
 
-
-
 #problem 67 part a)
 families = read.csv(url("http://statistics.csueastbay.edu/~jkerr/STAT65012/families.txt"), header=T)
 families[1:10,]
@@ -215,9 +213,38 @@ counter
 
 
 
-#part VI
+#part VII
+
+
+numbers_chosen2 = numeric(100)
+B_results2 = numeric(100)
+sample_mean2 = numeric(100)
+sample_sd2 = numeric(100)
+for (C in 1:100)
+{
+	numbers_chosen2 = sample(size,100, replace=FALSE);  
+	B_results2 = families[numbers_chosen2[1:100],]
+		
+		
+	sample_mean2[C] = mean(B_results2[1:100,4])	
+	sample_sd2[C] = sd(B_results2[1:100,4])
+}
+sample_mean2
+sample_sd2
+
+
+hist(sample_mean2)
+hist(sample_sd2)
 
 
 
 
+#part C
+#create datasets based on region 
+North = subset(families,families[,5] == 1)
+East = subset(families,families[,5] == 2)
+South = subset(families,families[,5] == 3)
+West = subset(families, families[,5]==4)
 
+#test to make
+nrow(South)
