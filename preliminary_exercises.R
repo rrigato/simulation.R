@@ -26,3 +26,37 @@ x2%%1
 scalar_num = 3
 
 x2%%scalar_num
+
+#problem 5
+x5 = c(2.3,7.8,2.13)
+x5%%floor(x5)
+
+
+#problem 6
+x6 = c(2.3,7.8,2.13)
+z = 1;
+for (i in 2:length(x6))
+{
+
+	if (x6[i] > x6[i-1])
+	{
+		z = i;
+	}
+	
+}
+x6[z]
+
+
+#problem 6
+x7 = c(2.3,7.8,12.13)
+flag=1;
+for (i in 2:length(x7))
+{
+
+	if (x7[i] < x7[i-1])
+	{
+		flag = 0;
+	}
+	
+}
+flag
