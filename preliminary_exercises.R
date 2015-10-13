@@ -17,7 +17,6 @@ for (i in 1:length(x2))
 	z = z-1;
 }
 Bool;
-
 #problem 3
 x2%%1
 
@@ -47,7 +46,7 @@ for (i in 2:length(x6))
 x6[z]
 
 
-#problem 6
+#problem 7
 x7 = c(2.3,7.8,12.13)
 flag=1;
 for (i in 2:length(x7))
@@ -60,3 +59,20 @@ for (i in 2:length(x7))
 	
 }
 flag
+
+
+
+
+#problem 8
+
+n = 5;
+total = 1;
+while(n !=1)
+{
+	total = total*n;
+	n = n-1;
+}
+
+total
+
+
