@@ -9,7 +9,7 @@ for (i in 1:length(x2))
 {
 	z = length(x2);
 	Bool[i] = 1;
-	if (x2[i] != x2[z])
+	if (x2[i] != x2[length(x2)+1 -i])
 	{
 		Bool[i] = 0;
 	}
