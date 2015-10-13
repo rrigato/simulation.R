@@ -76,3 +76,23 @@ while(n !=1)
 total
 
 
+#problem 9
+x9 = c(2.3,7.8,12.13)
+
+cumsum(x9) [length(x9)]
+
+
+#problem 10
+n = 10;
+a= 5
+r = 1
+total = a;
+while(r !=n-1)
+{
+	total = total + a^r;
+	r= r+1
+}
+
+total
+
+
