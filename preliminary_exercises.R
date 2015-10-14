@@ -96,3 +96,25 @@ while(r !=n-1)
 total
 
 
+
+
+#problem 11
+x11 = c(2.3,7.8,12.13,7.25, 1.67)
+x11y =  c(5,7,2,7,5)
+z = numeric(length(x11y) )
+for (i in 1:length(x11y))
+{
+	z[i] = x11[i]
+	if (x11[i] < x11y[i])
+	{
+		z[i] = x11y[i]
+	}
+}
+z
+
+
+
+#problem 12
+p = c(10,5)
+q = c(17,14)
+r = c(3,2)
