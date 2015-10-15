@@ -2,7 +2,7 @@ flag = 1;
 i = 1;
 x = c(3.4, 2.1, 6.7,5.2, 7.3, 1.6, 3.1);
 n = length(x);
-
+iteration_num = 0;
 while(flag)
 {
 	if (i ==1)
@@ -32,7 +32,7 @@ while(flag)
 	{
 		i = 1
 	}
-	
+	iteration_num = iteration_num +1
 }
-
+iteration_num
 x
