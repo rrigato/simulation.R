@@ -121,3 +121,6 @@ r = c(3,2)
 
 
 distance = p^2 - q^2
+
+#creating your own indicator variable in R
+z = x*(x>y) + y*(x <=y)
