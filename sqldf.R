@@ -22,5 +22,6 @@ library(sqldf);
 temp <- sqldf("SELECT m.*, s.name2 from 
 			scores s inner join 
 			Min_Wage m 
-			on s.name = m.Year");
+			on s.name = m.Year
+			where m.Year <2014");
 temp
