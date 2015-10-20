@@ -50,14 +50,38 @@ bin.data <- function(x, bins)
 	outcom = numeric(lenBin +1)
 	lenX = length(x)
 	z = 1
-	while ( z!= lenx)
+	while ( z!= lenX)
 	{
-	
+		for (g in 1: (lenBin+1))
+		{
+			if (g ==1)
+			{
+				if (x[z]< bins[g])
+				{
+					outcom[g] = outcom[g] + 1
+				}
+				else if (g <= lenBin)
+				{
+
+					if ( bins[g-1]< x[z] <= bins[g])
+					{
+						outcom[g]  = outcom[g] +1
+					}
+				}
+				else
+				{
+					outcom[g] = outcom[g] +1
+				}
+			}
+			
+
+		}
+		z = z+ 1
 	}
 
 }
 
-bins2 = c(1, 2, 3, 1)
+bins2 = c(1, 2, 3)
 
 bin.data(x,bins2)
 
