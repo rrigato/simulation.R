@@ -10,8 +10,10 @@ merge.sort <- function (in1,in2)
 	{
 		temp1 = in1[count1]
 		temp2 = in2[count2]
+		print(count1);
 		if (temp1 > temp2)
 		{
+			print(temp1);
 			final[i] = temp1
 			count1 = count1 +1
 				
