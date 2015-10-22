@@ -10,10 +10,10 @@ merge.sort <- function (in1,in2)
 	{
 		temp1 = in1[count1]
 		temp2 = in2[count2]
-		print(count1);
+		print(count1)
+		print(count2)
 		if (temp1 > temp2)
 		{
-			print(temp1);
 			final[i] = temp1
 			count1 = count1 +1
 				
@@ -29,10 +29,61 @@ merge.sort <- function (in1,in2)
 	return(final);
 }
 
- x = c(1,2,3,4);  y = c(1.5,3,5);
+ in1 = c(1,2,3,4);  in2 = c(1.5,3,5);
 z = merge.sort(x,y); z;
 
+	count1 = 1
+	count2 = 1
+	len1 = length(in1)
+	len2 = length(in2)
+	final = numeric(len1 + len2); final
+	final_count = 1
+	while (final_count < (len1+len2))
+	{
 
+
+
+
+		temp1 = in1[count1]
+		temp2 = in2[count2]
+		print(count1)
+		print(count2)
+		if (temp1 > temp2)
+		{
+			final[final_count] = temp2
+			count2 = count2 +1
+				
+		}
+		else
+		{
+			final[final_count] = temp1
+			count1 = count1 +1	
+		}
+
+
+		print(final)
+		if (count1 == len1)
+		{
+			while ( count2 <= len2)
+			{
+				final[final_count] = in2[count2]
+				final_count = final_count +1 
+				count2 = count2 +1
+			}
+
+		}
+		if (count2 == len2)
+		{
+			while ( count1 <= len1)
+			{
+				final[final_count] = in1[count1]
+				final_count = final_count +1 
+				count1 = count1 +1
+			}
+
+		}
+		final_count = final_count +1
+	}
 
 
 
@@ -96,4 +147,3 @@ test1 <- function(in1,in2)
 	in1[1]
 	in2[1]
 }
-test1 (x,y)
