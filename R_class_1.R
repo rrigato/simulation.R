@@ -147,3 +147,17 @@ test1 <- function(in1,in2)
 	in1[1]
 	in2[1]
 }
+
+
+
+in1 = c(1,2,3,4)
+in2 = c(1.5,3.5)
+count1 = 1
+count2 = 1
+z = numeric(length(in1) + length(in2))
+counter = 1
+while(counter > (length(in1) + length(in2)) )
+{
+    print(counter)
+    counter = counter +1
+}
