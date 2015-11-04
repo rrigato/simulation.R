@@ -36,3 +36,4 @@ while(flag)
 }
 iteration_num
 x
+x = x%5
