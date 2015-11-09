@@ -10,3 +10,23 @@ result = numeric(10000)
 i = .001
 result[1:10000] = bin_like(n,x, seq(from=.0001, to = 1, by=.0001))
 plot(result)
+
+
+B = 15000
+
+result = numeric(B)
+
+MLE = .0333
+
+n = 3839
+Ran_value = n1 = n2 = n3 = n4 = numeric(1)
+
+for (i in 1:B)
+{
+	Ran_value = sample(n,1)
+	n1 = Ran_value*.25*(2+MLE)
+	n2 = Ran_value*.25*(1-MLE)
+	n3 = n2
+	n4 = Ran_value * .25 * MLE
+	result[i] = (.25 * n1 + n2 -n3 + n4)/ 3.25*n1 - 2 
+}
